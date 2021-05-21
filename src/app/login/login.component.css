@@ -1,0 +1,43 @@
+.loginBtn {
+  margin-top: 5px;
+}
+
+.registerButton {
+  text-align: right;
+  float: right;
+}
+
+input {
+  width: 20rem;
+}
+
+.alertMessage {
+  width: 100%;
+  text-align: center;
+}
+
+.box {
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+}
+
+.loginContainer {
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  width: 25rem;
+  height: auto;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  margin-top: 7rem;
+}
+
+.upperContainer {
+  background-color: whitesmoke;
+  min-height: 94.1vh;
+}
+
+.capgeminiLogo {
+  float: right;
+}

@@ -1,0 +1,98 @@
+.buttonContainer {
+  border-radius: 20%;
+  border: dotted;
+  width: 10rem;
+}
+
+.buttonBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+.createButton {
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.createButton:hover {
+  background-color: lightsteelblue;
+}
+
+.bibo {
+  font-size: 1.8rem;
+  color: blue;
+}
+
+.cardText {
+  margin-top: -1rem;
+  font-weight: bold;
+}
+
+.boardList {
+  width: 85%;
+  margin: auto;
+  margin-top: 2.5rem;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.column-item {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  padding: 0 20px;
+
+  position: relative;
+
+  margin-left: -15px;
+  margin-top: 10px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.footbutton {
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.column-item .column-control-box {
+  position: absolute;
+  right: 5px;
+  display: flex;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.column-item:hover .column-control-box {
+  opacity: 1;
+  visibility: visible;
+}
+
+.column-control-box .column-control-button {
+  background: #f5f7f8;
+  display: flex;
+  border-radius: 10px;
+  padding: 2px 7px;
+}
+
+.column-control-box .column-control-button:hover {
+  background-color: #eee;
+}
+
+.column-control-box .column-control-button:active {
+  background-color: #e5e7e8;
+}
+
+.halloMsg {
+  margin-right: 8rem;
+  margin-top: 2rem;
+}

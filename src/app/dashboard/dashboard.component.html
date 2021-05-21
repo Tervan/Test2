@@ -1,0 +1,135 @@
+<!--Modal for creating a Board-->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Board</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+      <div class="form-group">
+        <div class="container">
+          <label for="NameofBoard">Board Name:</label>
+          <!--&nbsp; to be deleted as soon as css works!-->
+          <label id="boardName">&nbsp;{{ boardName }}</label>
+          <button type="button" class="btn" (click)="refreshName()">
+            <i class="bi bi-arrow-repeat"></i>
+          </button>
+        </div>
+        <div class="container">
+          <label for="Spaltenanzahl">Columns:</label>
+          <div class="input-group">
+            <input
+              ngModel
+              required
+              name="text"
+              type="text"
+              class="form-control"
+              placeholder="Type column name here ..."
+            />
+          </div>
+          <section class="section">
+            <div class="container">
+              <div class="column-list">
+                <div class="column-item" *ngFor="let column of columns">
+                  <div class="column-text">
+                    {{ column.toString() }}
+                  </div>
+
+                  <div class="column-control-box">
+                    <div type="button" class="column-control-button">
+                      <i class="material-icons">edit</i>
+                    </div>
+
+                    <div
+                      type="button"
+                      class="column-control-button"
+                      (click)="onDeleteClick(column)"
+                    >
+                      <i class="material-icons">delete</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn footbutton btn-outline-dark">
+          <i class="bi bi-plus"></i>
+          Add new column
+        </button>
+        <button
+          type="button"
+          class="btn footbutton btn-outline-dark"
+          (click)="saveBoard()"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<!--Begin of acutal seen UI-->
+<div class="dashboard">
+  <h3 class="text-right halloMsg">Hallo {{ currentUser.username }}</h3>
+  <div class="row text-center h-100">
+    <div class="card offset-md-2 buttonContainer d-flex">
+      <div class="card-body d-flex buttonBody">
+        <!--align-items-center justify-content-center-->
+        <button
+          type="button"
+          class="createButton btn btn-secondary"
+          (click)="open(content)"
+        >
+          <i class="bi bibo bi-plus"></i>
+        </button>
+      </div>
+      <p class="cardText">New Board</p>
+    </div>
+  </div>
+
+  <div>
+    <table class="table table-striped boardList text-center">
+      <thead>
+        <tr>
+          <th scope="col">Name of Board</th>
+          <th scope="col">Create Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let board of boards; index as i">
+          <td>{{ board.boardName }}</td>
+          <td>{{ board.created | date }}</td>
+          <td>
+            <button type="button" (click)="openBoard(board.id)">
+              <i class="bi bi-folder2-open"></i>
+            </button>
+            <button type="button" (click)="deleteBoard(board.id)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="Column-list">
+      <div class="column-item"></div>
+    </div>
+  </div>
+</section>

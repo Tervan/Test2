@@ -1,0 +1,10 @@
+.wrapper {
+  max-height: 100vh;
+  border: 1px solid whitesmoke;
+  display: flex;
+  overflow-x: auto;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}

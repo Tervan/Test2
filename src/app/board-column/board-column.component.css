@@ -1,0 +1,32 @@
+.colum-create-button {
+  border: none; /* Remove borders */
+  background-color: white;
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 50%;
+  justify-content: center;
+}
+/* Darker background on mouse-over */
+.colum-create-button:hover {
+  background-color: RoyalBlue;
+}
+
+.board-colum {
+  float: left;
+  min-width: 450px;
+  min-height: 85vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: auto;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 15px;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 5px solid #bbb;
+  border-radius: 5px;
+}
+
+.container {
+  padding: 20px;
+}
